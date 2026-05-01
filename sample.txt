@@ -1,0 +1,10 @@
+Retrieval-Augmented Generation (RAG) is a technique that combines information retrieval with text generation. 
+It allows language models to access external knowledge sources to improve factual accuracy.
+
+Chunking plays a critical role in RAG systems. If chunks are too large, embeddings may lose specificity. 
+If chunks are too small, important context may be lost.
+
+Vector databases store embeddings and allow similarity-based search. Common similarity measures include cosine similarity.
+
+The quality of retrieval directly affects the final generated answer. Poor retrieval leads to hallucinations, 
+even if the language model itself is strong.
