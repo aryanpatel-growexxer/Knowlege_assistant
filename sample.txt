@@ -1,10 +1,25 @@
-Retrieval-Augmented Generation (RAG) is a technique that combines information retrieval with text generation. 
-It allows language models to access external knowledge sources to improve factual accuracy.
+Retrieval-Augmented Generation (RAG) is a framework that enhances language models by integrating external knowledge retrieval. Instead of relying solely on parametric memory, RAG fetches relevant information from a knowledge base before generating responses.
 
-Chunking plays a critical role in RAG systems. If chunks are too large, embeddings may lose specificity. 
-If chunks are too small, important context may be lost.
+One of the core components of RAG is chunking. Documents are divided into smaller segments before being embedded. Chunk size plays a crucial role: large chunks may dilute semantic meaning, while small chunks may lose context.
 
-Vector databases store embeddings and allow similarity-based search. Common similarity measures include cosine similarity.
+Embeddings convert text into vector representations. These vectors are stored in vector databases such as FAISS or Chroma, enabling efficient similarity search.
 
-The quality of retrieval directly affects the final generated answer. Poor retrieval leads to hallucinations, 
-even if the language model itself is strong.
+Similarity search is typically performed using cosine similarity, although other metrics like dot product can also be used.
+
+A major challenge in RAG systems is retrieval accuracy. If irrelevant chunks are retrieved, the language model may generate incorrect or hallucinated answers.
+
+Another challenge is context window limitation. Large language models can only process a limited number of tokens, making it important to select the most relevant chunks.
+
+Re-ranking is often used after initial retrieval to improve the quality of selected chunks. It involves re-evaluating retrieved candidates using additional signals.
+
+Query understanding is an emerging area in RAG systems. Instead of treating all queries equally, systems can classify queries and adapt retrieval strategies accordingly.
+
+For example, factual queries require precise chunk retrieval, while analytical queries may require multiple chunks from different sections.
+
+Hybrid search combines keyword-based and vector-based retrieval to improve performance, especially when exact matches are important.
+
+Despite its advantages, RAG does not completely eliminate hallucinations. It reduces them by grounding responses in retrieved context.
+
+Efficient indexing and metadata tagging can further improve retrieval performance by narrowing down search space.
+
+RAG systems are widely used in applications such as chatbots, enterprise search, and document question answering systems.
